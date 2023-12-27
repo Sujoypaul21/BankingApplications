@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        .main {
+            margin-top: 20px;
+        }
+
+        .panel-success {
+            border-color: #5cb85c;
+        }
+
+        .panel-success > .panel-heading {
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+        }
+
+        .green-letter {
+            color: #5cb85c;
+        }
+
+        .center-container {
+            display: absolute;
+            justify-content: center;
+            align-items: center;
+            height: 150vh; /* Adjust as needed */
+        }
+    </style>
+    </style>
+</head>
+
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<button onclick="goBack()" class="btn btn-primary" style="margin-left: 200px; margin-top: 10px;">Back</button>
+
+<div class="container main center-container" style="margin-right: 380px; margin-top: 100px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <!--<h1 class="page-header">Dashboard</h1>-->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h2><span class="green-letter">S</span>avings Balance:</h2>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <h1><i class="fa fa-usd" aria-hidden="true"></i> <span
+                                    th:text="${savingsAccount.accountBalance}">...</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.row -->
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Post Date</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Amount</th>
+                <th>Available Balance</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-th-each="savingsTransaction : ${savingsTransactionList}">
+                <td data-th-text="${savingsTransaction.date}">...</td>
+                <td data-th-text="${savingsTransaction.description}">...</td>
+                <td data-th-text="${savingsTransaction.type}">...</td>
+                <td data-th-text="${savingsTransaction.status}">...</td>
+                <td data-th-text="${savingsTransaction.amount}">...</td>
+                <td data-th-text="${savingsTransaction.availableBalance}">...</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"
+        integrity="sha384-i/0jMd7e1mafwGkabME-8lYKYgStbD0rYdU/2WhfO5KI5lA6gDk9wP5OEXFMv0bP"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script>
+    function goBack() {
+         window.location.href = '/userFront';
+}
+</script>
+</body>
+
+</html>

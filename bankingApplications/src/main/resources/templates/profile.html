@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Account Information</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+.center-container {
+display: absolute;
+justify-content: center;
+align-items: center;
+height: 150vh; /* Adjust as needed */
+}
+</style>
+<body>
+<button onclick="goBack()" class="btn btn-primary" style="margin-left: 200px; margin-top: 10px;">Back</button>
+
+<div class="container main center-container" style="margin-right: 320px; margin-top: 100px;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Update Account Information</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="name" name="name"
+                                       placeholder="Enter your Full Name" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="phone" name="phone"
+                                       placeholder="Enter your Phone Number" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="email" name="email"
+                                       placeholder="Enter your Email Address" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-users"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="username" name="username"
+                                       placeholder="Enter your Username" required="required"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Update Settings</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Your Account Information</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Primary Account Number</th>
+                            <th>Savings Account Number</th>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCT0329f495949e7905087b02954637a638b722402b05038796027819a254098d" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoJtKh7z7lGz7fuP4F8nfdFvAOA6Gg/z6Y5J6XqqyGXYM2ntXt98TzKZm+y0pO/YbY3Fh" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdQ48gD3AZ88EUy07zcE33qgKIj8CBEyQgLX5JfXJjnZoZf1I1r1uUOQWx/k0pYuKlkFQNs1IeY/n4wKVcEfB1NfEtTbK2ZpXGxFNVnwuUwuJDvGvJdMgUUuJmV+dFxTZRiTG2+t1nP0NdKk/qTsFW04mL/kTpCZYsNgIpTNKNhjLZi9PZnMpzLmDGhDVrRPgQjD2CkqzFYeJE/bPuBXZWQZNQVcZJrEtTJLZpKxQ" crossorigin="anonymous"></script>
+<script>
+    function goBack() {
+         window.location.href = '/userFront';
+}
+</script>
+</body>
+</html>

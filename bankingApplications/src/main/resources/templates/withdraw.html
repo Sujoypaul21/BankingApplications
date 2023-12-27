@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        .main {
+            margin-top: 20px;
+        }
+
+        .center-container {
+            display: absolute;
+            justify-content: center;
+            align-items: center;
+            height: 150vh; /* Adjust as needed */
+        }
+    </style>
+    </style>
+</head>
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<button onclick="goBack()" class="btn btn-primary" style="margin-left: 200px; margin-top: 10px;">Back</button>
+
+<div class="container main center-container" style="margin-right: 100px; margin-top: 100px;">
+    <div class="row">
+        <div class="col-md-6">
+            <form th:action="@{/account/withdraw}" method="post">
+                <div class="form-group">
+                    <label for="accountType">1. Please select the account you would like to withdraw:</label>
+                    <select class="form-control" th:value="${accountType}" name="accountType" id="accountType" required="required">
+                        <option disabled="disabled" selected="selected"> -- Select your account -- </option>
+                        <option>Primary</option>
+                        <option>Savings</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Please specify the amount you would like to withdraw:</label>
+                    <div class="input-group">
+                        <input th:value="${amount}" type="text" name="amount" id="amount" class="form-control" aria-label="Amount (to the nearest dollar)" />
+                    </div>
+                </div>
+
+                <input type="hidden"
+                       name="${_csrf.parameterName}"
+                       value="${_csrf.token}"/>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Withdraw</button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <!-- Add additional content for the right column if needed -->
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    function goBack() {
+         window.location.href = '/userFront';
+}
+</script>
+</body>
+</html>

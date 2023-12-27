@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Include Bootstrap and Font Awesome CDN links here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+          padding-top: 50px;
+        }
+
+        .container.main {
+          margin-top: 20px;
+        }
+
+        .panel {
+          margin-top: 20px;
+        }
+
+        .panel-heading {
+          padding: 10px 15px;
+        }
+
+        .panel-footer {
+          padding: 10px 15px;
+        }
+    </style>
+</head>
+
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+<div class="container main">
+    <div class="row">
+        <div class="col-lg-12">
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h2>Primary Balance: </h2>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <h1><i aria-hidden="true"></i> <span th:text="${primaryAccount.accountBalance}"></span></h1><br>
+
+
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/account/primaryAccount}">
+                    <div class="panel-footer">
+                        <p>Primary Account Number: <span th:text="${primaryAccount.accountNumber}"></span></p>
+
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h2>Savings Balance: </h2>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <h1><i aria-hidden="true"></i> <span th:text="${savingsAccount.accountBalance}">...</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/account/savingsAccount}">
+                    <div class="panel-footer">
+                        <p>Saving Account Number:<span th:text="${primaryAccount.accountNumber}"></span></p>
+
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-credit-card fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Deposit</div>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/account/deposit}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Go to Deposit</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-money fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Withdraw</div>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/account/withdraw}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Go to Withdrawal</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- New panels for Transfer Between and Transfer to Someone Else -->
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-exchange fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Transfer Between</div>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/transfer/betweenAccounts}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Go to Transfer Between</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-blue">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-handshake-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Transfer to Someone Else</div>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/transfer/toSomeoneElse}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Go to Transfer to Someone Else</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-blue">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-user fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Recipient</div>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/transfer/recipient}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Add a Recipient</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.row -->
+
+</div>
+
+<!--<div th:replace="~{common/header :: common-header}"></div>-->
+
+</body>
+
+</html>

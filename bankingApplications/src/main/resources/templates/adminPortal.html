@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - E-Banking</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Font Awesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-bottom: 70px; /* Adjust based on the height of your footer */
+            background-color: #f8f9fa; /* Background color for the entire page */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+        }
+
+        .center-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            transition: transform 0.2s; /* Add smooth transition effect */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Increase size on hover */
+        }
+
+        .card-primary {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #fff;
+        }
+
+        .card-secondary {
+            background-color: #6c757d; /* Bootstrap secondary color */
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Additional Content Goes Here -->
+<div class="center-content">
+    <div class="container">
+        <h1 class="text-center mb-4">Welcome to the Admin Portal</h1>
+        <div class="row">
+            <!-- Create Bank Account Card -->
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-body">
+                        <h5 class="card-title">Create Bank Account</h5>
+                        <p class="card-text">Click below to create a new bank account.</p>
+                        <button class="btn btn-light" onclick="createAccount()">
+                            <i class="fas fa-university"></i> Create Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List of Customers Card -->
+            <div class="col-md-6">
+                <div class="card card-secondary">
+                    <div class="card-body">
+                        <h5 class="card-title">List of Customers</h5>
+                        <p class="card-text">Click below to view the list of customers.</p>
+                        <button class="btn btn-light" onclick="listCustomers()">
+                            <i class="fas fa-users"></i> List Customers
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Your custom script for button actions -->
+<script>
+    function createAccount() {
+        window.location.href = '/save';
+    }
+
+    function listCustomers() {
+        window.location.href = '/list';
+    }
+</script>
+
+</body>
+
+
+</html>
